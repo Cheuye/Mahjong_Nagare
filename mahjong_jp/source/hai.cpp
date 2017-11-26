@@ -60,6 +60,18 @@ std::string Hai::name() const {
     return name_;
 }
 
+bool Hai::operator<(const Hai &hai) const {
+    return id_ < hai.id();
+}
+
+bool Hai::operator<=(const Hai &hai) const {
+    return id_ <= hai.id();
+}
+
+bool Hai::operator==(const Hai &hai) const {
+    return id_ == hai.id();
+}
+
 bool Hai::is_shu() const {
     return (id_ >= 1 && id_ <= 27) || (id_ >= 35 && id_ <= 37); 
 }

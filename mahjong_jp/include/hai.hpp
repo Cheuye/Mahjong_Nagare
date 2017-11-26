@@ -28,6 +28,10 @@ namespace Mahjong_JP {
         static Index get_id(std::string name);
         static std::string get_name(Index id);
 
+        bool operator<(const Mahjong_JP::Hai &hai) const;
+        bool operator<=(const Mahjong_JP::Hai &hai) const;
+        bool operator==(const Mahjong_JP::Hai &hai) const;
+
         bool is_shu() const;
         bool is_m() const;
         bool is_s() const;
