@@ -23,8 +23,8 @@ const std::unordered_map < std::string, Index > Hai::HAI_ID = {
 };
 
 Index Hai::get_id(std::string name) {
-    auto got = Hai::HAI_ID.find(name);
-    if (got == Hai::HAI_ID.end()) {
+    auto got = HAI_ID.find(name);
+    if (got == HAI_ID.end()) {
         std::cerr << "Unknown hai name ( " << name << " )" << std::endl;
         return 0;
     } else {
@@ -33,8 +33,8 @@ Index Hai::get_id(std::string name) {
 }
 
 std::string Hai::get_name(Index id) {
-    auto got = Hai::HAI_NAME.find(id);
-    if (got == Hai::HAI_NAME.end()) {
+    auto got = HAI_NAME.find(id);
+    if (got == HAI_NAME.end()) {
         std::cerr << "Unknown hai name ( " << id << " )" << std::endl;
         return "uk";
     } else {
@@ -43,13 +43,13 @@ std::string Hai::get_name(Index id) {
 }
 
 Hai::Hai(std::string name) {
-    id_ = Hai::get_id(name);
-    name_ = Hai::HAI_NAME.at(id_);
+    id_ = get_id(name);
+    name_ = HAI_NAME.at(id_);
 }
 
 Hai::Hai(Index id) {
-    name_ = Hai::get_name(id);
-    id_ = Hai::HAI_ID.at(name_);
+    name_ = get_name(id);
+    id_ = HAI_ID.at(name_);
 }
 
 Index Hai::id() const {
