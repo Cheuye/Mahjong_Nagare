@@ -8,7 +8,7 @@ std::ostream &operator<< (std::ostream& os, const Hai& h) {
 }
 
 int main(int argc, char **argv) {
-    Hai h1 = Hai(35);
+    Hai h1 = Hai(15);
     std::cout << h1 << std::endl;
     std::cout << "is_aka: " << h1.is_aka() << std::endl;
     std::cout << "is_z: " << h1.is_z() << std::endl;

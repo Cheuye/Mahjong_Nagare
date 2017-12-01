@@ -5,23 +5,21 @@ using namespace Mahjong_JP;
 /* private */
 
 const std::unordered_map < Index, std::string > Hai::HAI_NAME = {
-    {0, "uk"},
-    {1, "1m"}, {2, "2m"}, {3, "3m"}, {4, "4m"}, {5, "5m"}, {6, "6m"}, {7, "7m"}, {8, "8m"}, {9, "9m"},
-    {10, "1p"}, {11, "2p"}, {12, "3p"}, {13, "4p"}, {14, "5p"}, {15, "6p"}, {16, "7p"}, {17, "8p"}, {18, "9p"},
-    {19, "1s"}, {20, "2s"}, {21, "3s"}, {22, "4s"}, {23, "5s"}, {24, "6s"}, {25, "7s"}, {26, "8s"}, {27, "9s"},
-    {28, "1z"}, {29, "2z"}, {30, "3z"}, {31, "4z"},
-    {32, "5z"}, {33, "6z"}, {34, "7z"},
-    {35, "0p"}, {36, "0s"}, {37, "0m"}
+    {1, "1m"}, {2, "2m"}, {3, "3m"}, {4, "4m"}, {5, "0m"}, {6, "5m"}, {7, "6m"}, {8, "7m"}, {9, "8m"}, {10, "9m"},
+    {11, "1p"}, {12, "2p"}, {13, "3p"}, {14, "4p"}, {15, "0p"}, {16, "5p"}, {17, "6p"}, {18, "7p"}, {19, "8p"}, {20, "9p"},
+    {21, "1s"}, {22, "2s"}, {23, "3s"}, {24, "4s"}, {25, "0s"}, {26, "5s"}, {27, "6s"}, {28, "7s"}, {29, "8s"}, {30, "9s"},
+    {31, "1z"}, {32, "2z"}, {33, "3z"}, {34, "4z"},
+    {35, "5z"}, {36, "6z"}, {37, "7z"},
+    {38, "uk"}
 };
 
 const std::unordered_map < std::string, Index > Hai::HAI_ID = {
-    {"uk", 0},
-    {"1m", 1}, {"2m", 2}, {"3m", 3}, {"4m", 4}, {"5m", 5}, {"6m", 6}, {"7m", 7}, {"8m", 8}, {"9m", 9},
-    {"1p", 10}, {"2p", 11}, {"3p", 12}, {"4p", 13}, {"5p", 14}, {"6p", 15}, {"7p", 16}, {"8p", 17}, {"9p", 18},
-    {"1s", 19}, {"2s", 20}, {"3s", 21}, {"4s", 22}, {"5s", 23}, {"6s", 24}, {"7s", 25}, {"8s", 26}, {"9s", 27},
-    {"1z", 28}, {"2z", 29}, {"3z", 30}, {"4z", 31},
-    {"5z", 32}, {"6z", 33}, {"7z", 34},
-    {"0p", 35}, {"0s", 36}, {"0m", 37}
+    {"1m", 1}, {"2m", 2}, {"3m", 3}, {"4m", 4}, {"0m", 5}, {"5m", 6}, {"6m", 7}, {"7m", 8}, {"8m", 9}, {"9m", 10},
+    {"1p", 11}, {"2p", 12}, {"3p", 13}, {"4p", 14}, {"0p", 15}, {"5p", 16}, {"6p", 17}, {"7p", 18}, {"8p", 19}, {"9p", 20},
+    {"1s", 21}, {"2s", 22}, {"3s", 23}, {"4s", 24}, {"0s", 25}, {"5s", 26}, {"6s", 27}, {"7s", 28}, {"8s", 29}, {"9s", 30},
+    {"1z", 31}, {"2z", 32}, {"3z", 33}, {"4z", 34},
+    {"5z", 35}, {"6z", 36}, {"7z", 37},
+    {"uk", 38}
 };
 
 /* public */
@@ -30,7 +28,7 @@ Index Hai::get_id(std::string name) {
     auto got = HAI_ID.find(name);
     if (got == HAI_ID.end()) {
         std::cerr << "Unknown hai name ( " << name << " )" << std::endl;
-        return 0;
+        return 38;
     } else {
         return got->second;
     }
@@ -77,26 +75,25 @@ bool Hai::operator==(const Hai &hai) const {
 }
 
 bool Hai::is_shu() const {
-    return (id_ >= 1 && id_ <= 27) || (id_ >= 35 && id_ <= 37); 
+    return (id_ >= 1 && id_ <= 30); 
 }
 
 bool Hai::is_m() const {
-    return (id_ >= 19 && id_ <= 27) || id_ == 37;
+    return (id_ >= 1 && id_ <= 10);
 }
 
 bool Hai::is_s() const {
-    return (id_ >= 10 && id_ <= 18) || id_ == 36;
+    return (id_ >= 21 && id_ <= 30);
 }
 
 bool Hai::is_p() const {
-    return (id_ >= 1 && id_ <= 9) || id_ == 35;
+    return (id_ >= 11 && id_ <= 20);
 }
 
 bool Hai::is_chunchan() const {
-    return (id_ > 1 && id_ < 9) || 
-        (id_ > 10 && id_ < 18) || 
-        (id_ > 19 && id_ < 27) ||
-        (id_ >= 35 && id_ <= 37);
+    return (id_ > 1 && id_ < 10) || 
+        (id_ > 11 && id_ < 20) || 
+        (id_ > 21 && id_ < 30);
 }
 
 bool Hai::is_routou() const {
@@ -104,15 +101,15 @@ bool Hai::is_routou() const {
 }
 
 bool Hai::is_z() const {
-    return (id_ >= 28 && id_ <= 34);
+    return (id_ >= 31 && id_ <= 37);
 }
 
 bool Hai::is_fon() const {
-    return (id_ >= 28 && id_ <= 31);
+    return (id_ >= 31 && id_ <= 34);
 }
 
 bool Hai::is_sangen() const {
-    return (id_ >= 32 && id_ <= 34);
+    return (id_ >= 35 && id_ <= 37);
 }
 
 bool Hai::is_yaochu() const {
@@ -120,5 +117,5 @@ bool Hai::is_yaochu() const {
 }
 
 bool Hai::is_aka() const {
-    return id_ >= 35 && id_ <= 37;
+    return id_ == 5 || id_ == 15 || id_ == 25;
 }
