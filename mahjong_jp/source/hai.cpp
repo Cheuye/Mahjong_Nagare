@@ -2,6 +2,8 @@
 
 using namespace Mahjong_JP;
 
+/* private */
+
 const std::unordered_map < Index, std::string > Hai::HAI_NAME = {
     {0, "uk"},
     {1, "1m"}, {2, "2m"}, {3, "3m"}, {4, "4m"}, {5, "5m"}, {6, "6m"}, {7, "7m"}, {8, "8m"}, {9, "9m"},
@@ -21,6 +23,8 @@ const std::unordered_map < std::string, Index > Hai::HAI_ID = {
     {"5z", 32}, {"6z", 33}, {"7z", 34},
     {"0p", 35}, {"0s", 36}, {"0m", 37}
 };
+
+/* public */
 
 Index Hai::get_id(std::string name) {
     auto got = HAI_ID.find(name);
