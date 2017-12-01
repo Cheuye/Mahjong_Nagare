@@ -1,2 +1,14 @@
 update 1:
-(1) Repository initialized; (2) class hai created.
+(1) Repository initialized; (2) class hai.
+
+Update 2:
+(1) Order of hai changed (we decided to start with man).
+
+Update 3:
+(1) Operator <, <=, and == for Hai.
+
+Update 4:
+Changed some functions' name in class Hai
+
+Update 5
+(1) part of class Tehai; (2) some comments; (3) some tests for class Tehai.

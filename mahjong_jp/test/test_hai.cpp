@@ -7,7 +7,7 @@ std::ostream &operator<< (std::ostream& os, const Hai& h) {
     return os;
 }
 
-int main(int argc, char **agrv) {
+int main(int argc, char **argv) {
     Hai h1 = Hai(35);
     std::cout << h1 << std::endl;
     std::cout << "is_aka: " << h1.is_aka() << std::endl;
@@ -27,5 +27,12 @@ int main(int argc, char **agrv) {
     std::cout << "is_yaochu: " << h3.is_yaochu() << std::endl;
     std::cout << "is_sangen: " << h3.is_sangen() << std::endl;
     std::cout << "is_fon: " << h3.is_fon() << std::endl;
+
+    std::cout << Hai::get_name(34) << std::endl;
+
+    Hai h4 = Hai(Hai::get_id("5z"));
+    std::cout << "h1 < h3? " << (h1 < h3) << std::endl;
+    std::cout << "h3 == h4? " << (h3 == h4) << std::endl;
+    std::cout << "h3 <= h4? " << (h3 <= h4) << std::endl;
     return 1;
 }
