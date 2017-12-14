@@ -62,16 +62,20 @@ std::string Hai::name() const {
     return name_;
 }
 
-bool Hai::operator<(const Hai &hai) const {
-    return id_ < hai.id();
+bool Hai::operator<(const Hai& h) const {
+    return id_ < h.id();
 }
 
-bool Hai::operator<=(const Hai &hai) const {
-    return id_ <= hai.id();
+bool Hai::operator<=(const Hai& h) const {
+    return id_ <= h.id();
 }
 
-bool Hai::operator==(const Hai &hai) const {
-    return id_ == hai.id();
+bool Hai::operator==(const Hai& h) const {
+    return id_ == h.id();
+}
+
+bool Hai::operator!=(const Hai& h) const {
+    return !(id_ == h.id());
 }
 
 bool Hai::is_shu() const {
