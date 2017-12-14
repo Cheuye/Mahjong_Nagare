@@ -17,7 +17,7 @@ namespace Mahjong_JP {
 
             * furo is part of tehai.
             * order: 
-                (1) p < s < m < z;
+                (1) p < s < m < z (id);
                 (2) furo < ankan < juntehai;
                 (3) aka5(p, s, m) < 5(p, s, m).
         */

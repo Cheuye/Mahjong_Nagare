@@ -1,3 +1,5 @@
+/* Some tests for hai */
+
 #include "../include/hai.hpp"
 #include <iostream>
 using namespace Mahjong_JP;
